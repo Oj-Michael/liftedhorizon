@@ -10,8 +10,10 @@ body {
   background: #013974;
 }
 .container {
+  overflow-x: hidden;
   padding: 20px 50px;
 }
+
 nav {
   display: flex;
   align-items: center;
@@ -22,7 +24,9 @@ nav .logo img {
   aspect-ratio: 1;
   width: 100px;
 }
-
+nav .menu {
+  position: relative;
+}
 nav .menu ul {
   display: flex;
   list-style: none;
@@ -43,6 +47,10 @@ nav .menu li a.active {
 nav .menu li a:hover {
   color: #ebd26d;
 }
+nav .menu li a.active:hover {
+  color: #222;
+  background-color: #fff;
+}
 .hero-text {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -51,7 +59,7 @@ nav .menu li a:hover {
 .hero .col {
   padding: 10px;
 }
-.col h1 {
+.hero .col h1 {
   font-family: "Sofia", cursive;
   font-size: 55px;
   margin-bottom: 2rem;
@@ -85,7 +93,7 @@ nav .menu li a:hover {
   font-size: 1.2rem;
   font-weight: 550;
 }
-.col img {
+.hero .col img {
   display: block;
   margin: auto;
   width: 90%;
@@ -98,6 +106,14 @@ nav .menu li a:hover {
   position: absolute;
   bottom: -70px;
   left: 46%;
+}
+.menu-icon {
+  background: none;
+  border: none;
+  display: none;
+}
+.menu-icon img {
+  width: 30px;
 }
 
 .sect-1 {
@@ -166,7 +182,7 @@ nav .menu li a:hover {
 }
 .sec-text p {
   font-size: 15px;
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.2rem;
   line-height: 23px;
 }
 .row .cta {
@@ -215,7 +231,7 @@ nav .menu li a:hover {
 }
 
 footer {
-  padding-block: 3.5rem;
+  padding-block: 3rem;
   background-color: #f7f7f7;
 }
 footer .f-row {
@@ -233,7 +249,7 @@ footer .f-row .f-col h4 {
 }
 footer .f-col ul {
   font-family: "Winky Sans", sans-serif;
-    font-size: 19px;
+  font-size: 19px;
   display: grid;
   gap: 20px;
   list-style: none;
@@ -246,15 +262,13 @@ footer .f-col ul li:hover {
   color: #0f4173;
 }
 footer .f-img {
-  position: relative;
   height: 200px;
   background-color: #013974;
   border-radius: 12px;
   color: #fff;
 }
 footer .f-img h2 {
-  position: absolute;
-  bottom: 20px;
+  margin-top: -50px;
   text-align: center;
   left: 25px;
 }
@@ -284,4 +298,109 @@ footer .f-img img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media only screen and (max-width: 550px) {
+  .container {
+    padding: 1.2rem 1.5rem;
+  }
+  nav{
+    margin-top: -1.5rem;
+  }
+  nav .logo img{
+    width: 80px;
+  }
+  .menu-icon {
+    display: block;
+    position: relative;
+    z-index: 10;
+  }
+  nav .menu ul{
+    z-index: 5;
+    background: #014894;
+    padding: 15px 1.3rem;
+    width: 50vw;
+    left: 150px;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: -15px;
+    box-shadow: -4px 4px 15px #0005;
+    transition: 200ms ease-out;
+  }
+  nav .menu ul[aria-expanded="true"]{
+    left: -150px;
+  }
+  nav .menu ul li a{
+    font-size: 19px;
+  }
+  nav .menu li a.active,   nav .menu li a.active:hover{
+    background: none;
+    color: #fbe89b;
+    padding: 0;
+  }
+  .hero-text {
+    grid-template-columns: none;
+    gap: 20px;
+  }
+  .hero .col h1 {
+    font-size: 32px;
+    margin-bottom: 1.5rem;
+  }
+  .hero .col p {
+    font-size: 19px;
+    margin-bottom: 1.5rem;
+  }
+  .hero .col img {
+    width: 100%;
+    height: 300px;
+  }
+  .col .cta a {
+    display: block;
+    text-align: center;
+  }
+  .bot {
+    width: 130px;
+    left: 40%;
+  }
+  .sect-1 h2 {
+    font-size: 35px;
+    margin-bottom: 2rem;
+  }
+  .sec-text p{
+    font-size: 14px;
+  }
+  .row,
+  .row .grid {
+    grid-template-columns: none;
+  }
+  .sec-text h3 {
+    margin-bottom: 1.5rem;
+  }
+  .row .cta span {
+    display: block;
+    text-align: center;
+  }
+  .sect-2 .coll h2 {
+    font-size: 26px;
+    line-height: 33px;
+  }
+  .coll h2 span {
+    font-size: 29px;
+  }
+  footer .f-row {
+    flex-direction: column;
+    gap: 40px;
+  }
+  footer .f-row .f-col {
+    text-align: left;
+  }
+  footer .f-row .f-col h4 {
+    margin-bottom: 1.2rem;
+  }
+  .copy .container {
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
 }
