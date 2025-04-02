@@ -344,7 +344,7 @@ footer .f-img img {
     gap: 20px;
   }
   .hero .col h1 {
-    font-size: 29px;
+    font-size: 30px;
     margin-bottom: 1.5rem;
   }
   .hero .col p {
@@ -397,6 +397,10 @@ footer .f-img img {
   }
   footer .f-row .f-col h4 {
     margin-bottom: 1.2rem;
+    font-size: 19px;
+  }
+  footer .f-row .f-col ul{
+    font-size: 15px;
   }
   .copy .container {
     flex-direction: column;
