@@ -302,10 +302,10 @@ footer .f-img img {
 
 @media only screen and (max-width: 550px) {
   .container {
-    padding: 1.2rem 1.5rem;
+    padding: 1.2rem 1rem;
   }
   nav{
-    margin-top: -1.5rem;
+    margin-top: -1.2rem;
   }
   nav .logo img{
     width: 80px;
@@ -344,7 +344,7 @@ footer .f-img img {
     gap: 20px;
   }
   .hero .col h1 {
-    font-size: 32px;
+    font-size: 29px;
     margin-bottom: 1.5rem;
   }
   .hero .col p {
